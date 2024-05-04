@@ -1,0 +1,34 @@
+/* styles.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* Add other container styles as needed */
+  }
+  
+  .row {
+    margin-left: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    /* Add other row styles as needed */
+  }
+  
+  .field {
+    flex: 1;
+    margin-right: 10px;
+    /* Add other field styles as needed */
+  }
+  
+  /* Example styling for input elements */
+  input[type="date"],
+  input[type="number"],
+  input[type="checkbox"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color:black
+    /* Add other input styles as needed */
+  }
+  
+  
