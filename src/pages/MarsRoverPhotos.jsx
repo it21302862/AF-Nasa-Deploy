@@ -123,7 +123,7 @@ const MarsRoverPhotos = () => {
     <div>
       <div className="container p-0">
         <div className=" bg-black border border-gray-600 rounded-md flex flex-col md:flex-row md:items-center gap-5 p-4">
-            <div className="flex flex-wrap gap-2">
+            {/* <div className="flex flex-wrap gap-2">
               <DatePicker onChange={handleDateChange} />
               <Input
                 onChange={handleSolChange}
@@ -138,7 +138,29 @@ const MarsRoverPhotos = () => {
                 <Dropdown overlay={cam} placement="bottomLeft">
                   <Button>{SelectCamera}</Button>
                 </Dropdown>
-              </div>
+              </div> */}
+              <div className="flex flex-wrap gap-2">
+            <DatePicker className="w-1/4" onChange={handleDateChange} />
+            <Input
+              className="w-1/4"
+              onChange={handleSolChange}
+              placeholder="Enter Sol Number"
+            />
+            <Input
+              className="w-1/4"
+              onChange={handlePageChange}
+              placeholder="Enter Page Number"
+            />
+            <Dropdown overlay={cam} placement="bottomLeft">
+              <Button>{SelectCamera}</Button>
+            </Dropdown>
+            <button
+              className="bg-black text-white border-white border-2 rounded-full py-2 px-4 font-bold hover:bg-gray-800 hover:border-gray-800 hover:text-white"
+              onClick={handleSearch}
+            >
+              Search
+            </button>
+          
             </div>
 
           {/* <Button
@@ -148,15 +170,9 @@ const MarsRoverPhotos = () => {
           >
             Search
           </Button> */}
-           <button
-            className="bg-black text-white border-white border-2 rounded-full py-2 px-4 font-bold hover:bg-gray-800 hover:border-gray-800 hover:text-white"
-            onClick={handleSearch}
-          >
-            Search
-          </button>
         </div>
 
-        <p className="mt-8">
+        {/* <p className="mt-8">
           Sol: {tempSol ? tempSol : "No sol selected"} <br />
           Selected Date: {tempEarthDate
             ? tempEarthDate
@@ -167,7 +183,20 @@ const MarsRoverPhotos = () => {
           Selected Camera: {tempCam ? tempCam : "No camera selected"} <br />
           <br />
           Click Search to see the Results
-        </p>
+        </p> */}
+
+<div className="container mx-auto px-4">
+  {/* Your existing content here */}
+  <p className="mt-4 text-small text-blue-200 font-italic">
+    Sol: {tempSol ? tempSol : "No sol selected"} <br />
+    Selected Date: {tempEarthDate
+      ? tempEarthDate
+      : "No date selected"}{" "}
+    <br />
+    Selected Page: {tempPage ? tempPage : "No page selected"} <br />
+    Selected Camera: {tempCam ? tempCam : "No camera selected"} <br />
+  </p>
+</div>
 
         <MARSImageWithContext
           apiKey={apiKey}
