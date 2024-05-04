@@ -6,14 +6,13 @@ import { AuthContextProvider } from "./context/AuthContext";
 import Navbar from "./components/Navbar";
 import Protected from "./pages/Protected";
 import ParticlesComponent from "./components/Background";
-import NasaHomePage from "./pages/NasaHome";
 import PictureOfTheDay from "./pages/PictureOfTheDay";
-import MarsImages from "./pages/MarkRoverPhotos";
 import MarsRoverPhotos from "./pages/MarsRoverPhotos";
+
 
 function App() {
   return (
-    <div className="App px-2 md:px-0">
+    <div className="App">
       <AuthContextProvider>
         <BrowserRouter>
           <Navbar />
@@ -27,14 +26,6 @@ function App() {
               }
             />
             <Route path="/sign-in" element={<SignIn />} />
-            <Route
-              path="/nasa-homepage"
-              element={
-                <Protected>
-                  <NasaHomePage />
-                </Protected>
-              }
-            />
 
             <Route
               path="/picture-of-the-day"
@@ -46,7 +37,7 @@ function App() {
             />
 
             <Route
-              path="/mars-rover-photos"
+              path="/mars-rover-photos/:roverName"
               element={
                 <Protected>
                   <MarsRoverPhotos />
