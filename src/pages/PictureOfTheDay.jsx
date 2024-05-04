@@ -107,13 +107,19 @@ function PictureOfTheDay() {
             </div>
             
           )}
-          <Button
+          {/* <Button
             type="primary"
             icon={<SearchOutlined />}
             onClick={handleSearch}
           >
             Search
-          </Button>
+          </Button> */}
+           <button
+            className="bg-black text-white border-white border-2 rounded-full py-2 px-4 font-bold hover:bg-gray-800 hover:border-gray-800 hover:text-white"
+            onClick={handleSearch}
+          >
+            Search
+          </button>
         </div>
 
         <p className="mt-8">
