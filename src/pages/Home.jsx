@@ -11,9 +11,14 @@ const Home = () => {
   const apiKey = "yJZPuN2nvNQGZCf4SD7HMM6XhUdl1ZwNXBTrXD2P";
   const [activeRover, setActiveRover] = useState(null);
 
-  const handleSeeMoreClick = () => {
+  const handleSeeMoreClick = (roverName) => {
+    navigate(`/mars-rover-photos/${roverName}`);
+  };
+
+  const handleSeeMoreAdopClick =()=>  {
     navigate(`/picture-of-the-day`);
   };
+  
 
   // setActiveRover(roverName);
 
@@ -78,7 +83,11 @@ const Home = () => {
             )}
           </div>
           <div className="h-full w-full flex flex-row items-center xl:pl-16 xl:pr-24 relative lg:py-8 p-2 py-4">
-          <div className="hidden xl:flex absolute top-[50%] right-0 -rotate-90 cursor-pointer" onClick={handleSeeMoreClick}>
+            <div
+              className="hidden xl:flex absolute top-[50%] right-0 -rotate-90 cursor-pointer"
+              onClick={handleSeeMoreAdopClick}
+              data-testid="view-past-days"
+            >
               <span className="text">View Past Days</span>
             </div>
 
@@ -99,7 +108,10 @@ const Home = () => {
               <div className="text-start text-[16px]">
                 {apodData.length > 0 && apodData[0].explanation}
               </div>
-              <div className="xl:hidden cursor-pointer" onClick={handleSeeMoreClick}>
+              <div
+                className="xl:hidden cursor-pointer"
+                onClick={handleSeeMoreClick}
+              >
                 <span className="text">View Past Days</span>
               </div>
             </div>
@@ -118,16 +130,18 @@ const Home = () => {
         <div className="mt-8 grid lg:grid-cols-2 gap-16">
           <div className="flex flex-col items-center gap-4">
             <div
+              data-testid="rover-name-1"
               id="rover-name-1"
               className={`p-4 border bg-black hover:bg-[#202020] border-[#303030] rounded-[20px] w-full ${
                 activeRover === "curiosity" ? "border-[#37B535]" : ""
               }`}
               onClick={() => toggleRoverDetails("curiosity")}
             >
-              <div className="text-white text-[24px] text-start">Curiosity</div>
+              <div className="text-white text-[24px] text-start" date-testid="Curiosity">Curiosity</div>
             </div>
 
             <div
+              date-testid="rover-name-2"
               id="rover-name-2"
               className={`p-4 border bg-black hover:bg-[#202020] border-[#303030] rounded-[20px] w-full ${
                 activeRover === "opportunity" ? "border-[#37B535]" : ""
@@ -140,6 +154,7 @@ const Home = () => {
             </div>
 
             <div
+              date-testid="rover-name-3"
               id="rover-name-3"
               className={`p-4 border bg-black hover:bg-[#202020] border-[#303030] rounded-[20px] w-full ${
                 activeRover === "spirit" ? "border-[#37B535]" : ""
@@ -166,7 +181,7 @@ const Home = () => {
                   <div className="">
                     <div className="rounded-full h-[10px] w-[10px] bg-[#37B535]"></div>
                   </div>
-                  <div className="">Active</div>
+                  <div className="" data-testid ="active">Active</div>
                 </div>
                 {/* <div className="flex flex-row gap-2 items-center">
                   <div className="">
@@ -186,15 +201,14 @@ const Home = () => {
             </div>
 
             <div className="grid grid-cols-6 gap-4 p-8">
-              <div className="col-span-4">
+              <div className="col-span-4" data-testid="curiosity desc">
                 Curiosity is a car-sized Mars rover exploring Gale
                 crater and Mount Sharp on Mars as part of NASA's Mars Science
                 Laboratory (MSL) mission.
               </div>
               <div className="col-span-2 flex justify-end w-full">
                 <div className="">
-                  <button
-                    onClick={handleSeeMoreClick}
+                <button onClick={() => handleSeeMoreClick("curiosity")}
                     className="bg-white text-black font-bold py-2 px-4 rounded-full h-fit-content"
                   >
                     View Photos
@@ -264,14 +278,12 @@ const Home = () => {
 
             <div className="grid grid-cols-6 gap-4 p-8">
               <div className="col-span-4">
-                Curiosity is a car-sized Mars rover exploring Gale
-                crater and Mount Sharp on Mars as part of NASA's Mars Science
-                Laboratory (MSL) mission.
+              NASA's Opportunity Mars rover mission is complete after 15 years on Mars. Opportunity's record-breaking exploration laid the groundwork for future missions to the Red Planet.
               </div>
               <div className="col-span-2 flex justify-end w-full">
                 <div className="">
                   <button
-                    onClick={handleSeeMoreClick}
+                    onClick={() => handleSeeMoreClick("opportunity")}
                     className="bg-white text-black font-bold py-2 px-4 rounded-full h-fit-content"
                   >
                     View Photos
@@ -322,12 +334,6 @@ const Home = () => {
                   </div>
                   <div className="">Active</div>
                 </div>
-                {/* <div className="flex flex-row gap-2 items-center">
-                  <div className="">
-                    <div className="rounded-full h-[10px] w-[10px] bg-[#B53535]"></div>
-                  </div>
-                  <div className="">Inactive</div>
-                </div> */}
               </div>
             </div>
 
@@ -341,14 +347,12 @@ const Home = () => {
 
             <div className="grid grid-cols-6 gap-4 p-8">
               <div className="col-span-4">
-                Curiosity is a car-sized Mars rover exploring Gale
-                crater and Mount Sharp on Mars as part of NASA's Mars Science
-                Laboratory (MSL) mission.
+              Spirit, also known as MER-A (Mars Exploration Rover – A) or MER-2, is a Mars robotic rover, active from 2004 to 2010. Spirit was operational on Mars for 2208 sols or 3.3 Martian years (2269 days; 6 years, 77 days). It was one of two rovers of NASA's Mars Exploration Rover Mission managed by the Jet Propulsion Laboratory (JPL).
               </div>
               <div className="col-span-2 flex justify-end w-full">
                 <div className="">
                   <button
-                    onClick={handleSeeMoreClick}
+                    onClick={() => handleSeeMoreClick("spirit")}
                     className="bg-white text-black font-bold py-2 px-4 rounded-full h-fit-content"
                   >
                     View Photos

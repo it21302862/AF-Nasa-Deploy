@@ -2,27 +2,12 @@ import React, { useState } from "react";
 import { DatePicker, Button, Menu, Dropdown, Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import MARSImageWithContext from "../components/NasaAPI/MarsRover";
+import { useParams } from "react-router-dom";
 
 const MarsRoverPhotos = () => {
   const { RangePicker } = DatePicker;
 
   const items = [
-    // {
-    //   key: "date",
-    //   label: "Date",
-    // },
-    // {
-    //   key: "camera",
-    //   label: "Camera",
-    // },
-    // {
-    //   key: "sol",
-    //   label: "Sol",
-    // },
-    // {
-    //   key: "page",
-    //   label: "Page",
-    // },
     {
       key: "all",
       label: "All",
@@ -76,6 +61,10 @@ const MarsRoverPhotos = () => {
   const [sol, setSol] = useState("");
   const [camera, setCamera] = useState("");
   const [page, setPage] = useState("");
+  const { roverName } = useParams();
+
+  console.log(roverName);
+
 
   const [tempSol, setTempSol] = useState(sol);
   const [tempEarthDate, setTempEarthDate] = useState(earthDate);
@@ -87,12 +76,14 @@ const MarsRoverPhotos = () => {
     console.log(option);
   };
 
-  const handleDateChange = (date) => {
-    setTempEarthDate(date.toISOString().split("T")[0]);
-  };
 
+  const handleDateChange = (date) => {
+    const localDate = date.startOf('day').format('YYYY-MM-DD');
+    setTempEarthDate(localDate);
+  };
+  
   const handleCamera1Change = (option) => {
-    setTempCam(option.key); // Fixing this line to update state correctly
+    setTempCam(option.key); 
     console.log(option.key);
   };
 
@@ -105,32 +96,6 @@ const MarsRoverPhotos = () => {
   };
 
   const handleSearch = () => {
-    // if (searchOption === "date") {
-    //   setEarthDate(tempEarthDate);
-    //   setSol("");
-    //   setCamera("");
-    //   setPage("");
-    // } else if (searchOption === "camera") {
-    //   setCamera(tempCam);
-    //   setEarthDate("");
-    //   setSol("");
-    //   setPage("");
-    // } else if (searchOption === "sol") {
-    //   setSol(tempSol);
-    //   setEarthDate("");
-    //   setCamera("");
-    //   setPage("");
-    // } else if (searchOption === "page") {
-    //   setPage(tempPage);
-    //   setEarthDate("");
-    //   setCamera("");
-    //   setSol("");
-    // } else if (searchOption === "all") {
-    //   setEarthDate(tempEarthDate);
-    //   setSol(tempSol);
-    //   setCamera(tempCam);
-    //   setPage(tempPage);
-    // }
     setEarthDate(tempEarthDate);
     setSol(tempSol);
     setCamera(tempCam);
@@ -158,39 +123,6 @@ const MarsRoverPhotos = () => {
     <div>
       <div className="container p-0">
         <div className=" bg-black border border-gray-600 rounded-md flex flex-col md:flex-row md:items-center gap-5 p-4">
-          {/* <div className="">
-            <label>Search Option:</label>
-            <Dropdown overlay={menu} placement="bottomLeft">
-              <Button>{searchOption}</Button>
-            </Dropdown>
-          </div> */}
-          {/* {searchOption === "date" && (
-            <DatePicker onChange={handleDateChange} />
-          )}
-          {searchOption === "camera" && (
-            <div className="">
-              <label>Search Option:</label>
-              <Dropdown overlay={cam} placement="bottomLeft">
-                <Button>{SelectCamera}</Button>
-              </Dropdown>
-            </div>
-          )}
-          {searchOption === "sol" && (
-            <div className="">
-              <Input
-                onChange={handleSolChange}
-                placeholder="Enter Sol Number"
-              />
-            </div>
-          )}
-          {searchOption === "page" && (
-            <div className="">
-              <Input
-                onChange={handlePageChange}
-                placeholder="Enter Page Number"
-              />
-            </div>
-          )} */}
             <div className="flex flex-wrap gap-2">
               <DatePicker onChange={handleDateChange} />
               <Input
@@ -237,6 +169,7 @@ const MarsRoverPhotos = () => {
           sol={sol}
           page={page}
           camera={camera}
+          roverName={roverName} 
         />
       </div>
     </div>
