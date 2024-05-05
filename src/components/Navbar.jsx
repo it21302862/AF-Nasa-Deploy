@@ -22,7 +22,7 @@ const Navbar = () => {
           <img
             src="https://seeklogo.com/images/N/NASA-logo-9411797223-seeklogo.com.png"
             alt=""
-            className="h-10"
+            className="h-12"
           />
         </div>
       </div>
