@@ -194,7 +194,7 @@ const Home = () => {
 
             <div className="h-[300px] w-full">
               <img
-                src="https://th.bing.com/th?id=OSK.HEROXd0DfgkKmT_N9cSl7tXGQTof9Gk9SmEKa-RGkvD27Vk&w=312&h=200&c=15&rs=2&o=6&pid=SANGAM"
+                src="https://th.bing.com/th/id/R.72f58efd3329917d303d2ca2beafde6f?rik=%2bFvOfX6RHOhCjA&riu=http%3a%2f%2fwww.nasa.gov%2fcenters%2fames%2fimages%2fcontent%2f671125main_msl20110519_PIA14156.jpg&ehk=%2fgsfmqPDUyxPaGq4NMKldyKWorE3lJDK%2bZ%2beTtbMuqA%3d&risl=&pid=ImgRaw&r=0"
                 alt=""
                 className="object-cover w-full h-[300px]"
               />
@@ -246,7 +246,7 @@ const Home = () => {
 
             <div className="h-[300px] w-full">
               <img
-                src="https://th.bing.com/th?id=OSK.HEROXd0DfgkKmT_N9cSl7tXGQTof9Gk9SmEKa-RGkvD27Vk&w=312&h=200&c=15&rs=2&o=6&pid=SANGAM"
+                src="https://mars.nasa.gov/system/news_items/main_images/8414_1_MAIN_mars-rover-opportunity-tracks-Sol3754B-pia18605-CROPPED.jpg"
                 alt=""
                 className="object-cover w-full h-[300px]"
               />
@@ -291,7 +291,7 @@ const Home = () => {
 
             <div className="h-[300px] w-full">
               <img
-                src="https://th.bing.com/th?id=OSK.HEROXd0DfgkKmT_N9cSl7tXGQTof9Gk9SmEKa-RGkvD27Vk&w=312&h=200&c=15&rs=2&o=6&pid=SANGAM"
+                src="https://th.bing.com/th/id/R.48b470a16a5f9f63f81fb8b1230e49cb?rik=zXA8xyIOaNbHBw&riu=http%3a%2f%2fwww.nasa.gov%2fimages%2fcontent%2f706048main_pia16440-43_946-710.jpg&ehk=HcVGW1io3vkxWA532zwJ4URVFsN1MAJEoOb5OG0uu8k%3d&risl=&pid=ImgRaw&r=0"
                 alt=""
                 className="object-cover w-full h-[300px]"
               />
