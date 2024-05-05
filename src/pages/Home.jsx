@@ -95,7 +95,7 @@ const Home = () => {
               <div className="text-white text-md uppercase">
                 Astronomy Picture of the day
               </div>
-              <div className="text-white text-[40px] text-start">
+              <div className="text-blue-200 text-[40px] text-start">
                 {apodData.length > 0 && apodData[0].title}
               </div>
               <div className="flex flex-row gap-3 items-center">
@@ -133,7 +133,7 @@ const Home = () => {
               data-testid="rover-name-1"
               id="rover-name-1"
               className={`p-4 border bg-black hover:bg-[#202020] border-[#303030] rounded-[20px] w-full ${
-                activeRover === "curiosity" ? "border-[#37B535]" : ""
+                activeRover === "curiosity" ? "border-[#87CEFA]" : ""
               }`}
               onClick={() => toggleRoverDetails("curiosity")}
             >
@@ -144,7 +144,7 @@ const Home = () => {
               date-testid="rover-name-2"
               id="rover-name-2"
               className={`p-4 border bg-black hover:bg-[#202020] border-[#303030] rounded-[20px] w-full ${
-                activeRover === "opportunity" ? "border-[#37B535]" : ""
+                activeRover === "opportunity" ? "border-[#87CEFA]" : ""
               }`}
               onClick={() => toggleRoverDetails("opportunity")}
             >
@@ -157,7 +157,7 @@ const Home = () => {
               date-testid="rover-name-3"
               id="rover-name-3"
               className={`p-4 border bg-black hover:bg-[#202020] border-[#303030] rounded-[20px] w-full ${
-                activeRover === "spirit" ? "border-[#37B535]" : ""
+                activeRover === "spirit" ? "border-[#87CEFA]" : ""
               }`}
               onClick={() => toggleRoverDetails("spirit")}
             >
