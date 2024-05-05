@@ -209,35 +209,11 @@ const Home = () => {
               <div className="col-span-2 flex justify-end w-full">
                 <div className="">
                 <button onClick={() => handleSeeMoreClick("curiosity")}
-                    className="bg-white text-black font-bold py-2 px-4 rounded-full h-fit-content"
+                     className="bg-black text-white border-white border-2 rounded-full py-2 px-4 font-bold hover:bg-gray-800 hover:border-gray-800 hover:text-white"
                   >
                     View Photos
                   </button>
                 </div>
-              </div>
-              <div className="col-span-6 flex flex-col gap-4">
-                {marsData.photos && marsData.photos.length > 0 && (
-                  <div className="col-span-6 flex flex-col gap-4">
-                    <div className="flex w-full flex-row justify-between items-center border-b border-[#232323] pb-4">
-                      <div className="">Landed Date</div>
-                      <div className="">
-                        {marsData.photos[0].rover.landing_date}
-                      </div>
-                    </div>
-                    <div className="flex w-full flex-row justify-between items-center border-b border-[#232323] pb-4">
-                      <div className="">Launch Date</div>
-                      <div className="">
-                        {marsData.photos[0].rover.launch_date}
-                      </div>
-                    </div>
-                    <div className="flex w-full flex-row justify-between items-center border-b border-[#232323] pb-4">
-                      <div className="">Total Photos</div>
-                      <div className="">
-                        {marsData.photos[0].rover.total_photos}
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           </div>
@@ -284,35 +260,11 @@ const Home = () => {
                 <div className="">
                   <button
                     onClick={() => handleSeeMoreClick("opportunity")}
-                    className="bg-white text-black font-bold py-2 px-4 rounded-full h-fit-content"
+                    className="bg-black text-white border-white border-2 rounded-full py-2 px-4 font-bold hover:bg-gray-800 hover:border-gray-800 hover:text-white"
                   >
                     View Photos
                   </button>
                 </div>
-              </div>
-              <div className="col-span-6 flex flex-col gap-4">
-                {marsData.photos && marsData.photos.length > 0 && (
-                  <div className="col-span-6 flex flex-col gap-4">
-                    <div className="flex w-full flex-row justify-between items-center border-b border-[#232323] pb-4">
-                      <div className="">Landed Date</div>
-                      <div className="">
-                        {marsData.photos[0].rover.landing_date}
-                      </div>
-                    </div>
-                    <div className="flex w-full flex-row justify-between items-center border-b border-[#232323] pb-4">
-                      <div className="">Launch Date</div>
-                      <div className="">
-                        {marsData.photos[0].rover.launch_date}
-                      </div>
-                    </div>
-                    <div className="flex w-full flex-row justify-between items-center border-b border-[#232323] pb-4">
-                      <div className="">Total Photos</div>
-                      <div className="">
-                        {marsData.photos[0].rover.total_photos}
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           </div>
@@ -353,35 +305,11 @@ const Home = () => {
                 <div className="">
                   <button
                     onClick={() => handleSeeMoreClick("spirit")}
-                    className="bg-white text-black font-bold py-2 px-4 rounded-full h-fit-content"
+                    className="bg-black text-white border-white border-2 rounded-full py-2 px-4 font-bold hover:bg-gray-800 hover:border-gray-800 hover:text-white"
                   >
                     View Photos
                   </button>
                 </div>
-              </div>
-              <div className="col-span-6 flex flex-col gap-4">
-                {marsData.photos && marsData.photos.length > 0 && (
-                  <div className="col-span-6 flex flex-col gap-4">
-                    <div className="flex w-full flex-row justify-between items-center border-b border-[#232323] pb-4">
-                      <div className="">Landed Date</div>
-                      <div className="">
-                        {marsData.photos[0].rover.landing_date}
-                      </div>
-                    </div>
-                    <div className="flex w-full flex-row justify-between items-center border-b border-[#232323] pb-4">
-                      <div className="">Launch Date</div>
-                      <div className="">
-                        {marsData.photos[0].rover.launch_date}
-                      </div>
-                    </div>
-                    <div className="flex w-full flex-row justify-between items-center border-b border-[#232323] pb-4">
-                      <div className="">Total Photos</div>
-                      <div className="">
-                        {marsData.photos[0].rover.total_photos}
-                      </div>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
           </div>
