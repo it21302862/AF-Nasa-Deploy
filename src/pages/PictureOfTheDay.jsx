@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import APODImage from "../components/NasaAPI/Astronomy";
-import { DatePicker, Button, Menu, Dropdown , Input } from "antd";
+import { DatePicker, Button, Menu, Dropdown, Input } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 
 function PictureOfTheDay() {
@@ -97,15 +97,19 @@ function PictureOfTheDay() {
               <Button>{searchOption}</Button>
             </Dropdown>
           </div>
-          {searchOption === "date" && <DatePicker onChange={handleDateChange} />}
+          {searchOption === "date" && (
+            <DatePicker onChange={handleDateChange} />
+          )}
           {searchOption === "dateRange" && (
             <RangePicker onChange={handleRangePickerChange} />
           )}
           {searchOption === "count" && (
             <div className="">
-<Input onChange={handleCountChange} placeholder="Enter Number of Photos" />
+              <Input
+                onChange={handleCountChange}
+                placeholder="Enter Number of Photos"
+              />
             </div>
-            
           )}
           {/* <Button
             type="primary"
@@ -114,7 +118,7 @@ function PictureOfTheDay() {
           >
             Search
           </Button> */}
-           <button
+          <button
             className="bg-black text-white border-white border-2 rounded-full py-2 px-4 font-bold hover:bg-gray-800 hover:border-gray-800 hover:text-white"
             onClick={handleSearch}
           >
@@ -122,14 +126,17 @@ function PictureOfTheDay() {
           </button>
         </div>
 
-        <p className="mt-8">
-          Start Date: {tempStartDate ? tempStartDate : "No date selected"} <br />
-          End Date: {tempEndDate ? tempEndDate : "No date selected"} <br />
-          Selected Date: {tempSelectedDate ? tempSelectedDate : "No date selected"} <br />
-          Count: {tempCount ? tempCount : "No count selected"}
-          <br />
-          Click Search to see the Results
-        </p>
+        <div className="container mx-auto px-4">
+          <p className="mt-4 text-small text-blue-200 font-italic">
+            Start Date: {tempStartDate ? tempStartDate : "No date selected"}{" "}
+            <br />
+            End Date: {tempEndDate ? tempEndDate : "No date selected"} <br />
+            Selected Date:{" "}
+            {tempSelectedDate ? tempSelectedDate : "No date selected"} <br />
+            Count: {tempCount ? tempCount : "No count selected"}
+            <br />
+          </p>
+        </div>
 
         <APODImage
           apiKey={initialApiKey}
