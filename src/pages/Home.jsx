@@ -110,7 +110,7 @@ const Home = () => {
               </div>
               <div
                 className="xl:hidden cursor-pointer"
-                onClick={handleSeeMoreClick}
+                onClick={handleSeeMoreAdopClick}
               >
                 <span className="text">View Past Days</span>
               </div>
