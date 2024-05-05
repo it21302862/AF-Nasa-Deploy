@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="">
         <div className="">
           <img
-            src="https://th.bing.com/th/id/R.1fd7a1969fc6b68bb5e301cbabf04603?rik=G88v64hsF3h4YQ&riu=http%3a%2f%2fairports-worldwide.com%2fimg%2fwikipedia%2fgeneral_54748535.png&ehk=zq%2f1QLCZtbexE0fNRazTe3AJaGO74yCKYU2RR2hei%2fA%3d&risl=&pid=ImgRaw&r=0"
+            src="https://seeklogo.com/images/N/NASA-logo-9411797223-seeklogo.com.png"
             alt=""
             className="h-10"
           />
