@@ -154,7 +154,7 @@ const Home = () => {
                 imagination. Spirit, Opportunity’s twin, operated from 2004 to
                 2010. It studied rocks, analyzed soil, and contributed to our
                 understanding of Mars. Spirit’s legacy lives on as a pioneer in
-                Martian exploration. Join us on this interplanetary journey!
+                Martian exploration.
               </div>
               <div className="text-start text-blue-200 text-[16px]">
                 Join us on this interplanetary journey!
