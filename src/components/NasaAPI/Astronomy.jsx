@@ -59,11 +59,13 @@ const APODImage = ({ apiKey, date, startDate, endDate, count, thumbs }) => {
         </Typography>
       ) : (
         apodData.map((apod) => (
-          <div key={apod.date} className="w-full h-full" >
-          <div className="cursor-pointer bg-black border border-gray-600 rounded-[20px]"  onClick={() => handleSeeMoreClick(apod)}>
-          <div className="p-0">
-            
-            {/* <ModalImage
+          <div key={apod.date} className="w-full h-full">
+            <div
+              className="cursor-pointer bg-black border border-gray-600 rounded-[20px]"
+              onClick={() => handleSeeMoreClick(apod)}
+            >
+              <div className="p-0">
+                {/* <ModalImage
               small={apod.url}
               large={apod.hdurl}
               alt={apod.title}
@@ -74,34 +76,40 @@ const APODImage = ({ apiKey, date, startDate, endDate, count, thumbs }) => {
               className="h-[200px] w-full object-cover rounded-t-[20px] "
               
             /> */}
-            <img src={apod.url} alt="{apod.title}" className="h-[200px] w-full object-cover rounded-t-[20px]"/>
-            <div className="p-4">
-            <Typography  variant="h6" component="div">
-                {apod.title}
-              </Typography>
-              <div className="flex flex-row gap-3 items-center">
-                <div className="text-[14px]">{apod.date}</div>
-                <div className="">
-                  <div className="w-[6px] h-[5px] bg-white rounded-full"></div>
+                <img
+                  src={apod.url}
+                  alt="{apod.title}"
+                  className="h-[200px] w-full object-cover rounded-t-[20px]"
+                />
+                <div className="p-4">
+                  <Typography variant="h6" component="div">
+                    {apod.title}
+                  </Typography>
+                  <div className="flex flex-row gap-3 items-center">
+                    <div className="text-[14px]">{apod.date}</div>
+                    <div className="">
+                      <div className="w-[6px] h-[5px] bg-white rounded-full"></div>
+                    </div>
+                    <div className="text-[14px]">{apod.copyright}</div>
+                  </div>
                 </div>
-                <div className="text-[14px]">{apod.copyright}</div>
-              </div>
               </div>
             </div>
-             
-          </div>
           </div>
         ))
       )}
       {selectedApod && (
-        <Modal open={true}  className="overflow-scroll " >
-          <CardContent onClose={handleCloseModal}  >
-          <div className="grid lg:grid-cols-2 rounded-[20px] min-h-[80vh] w-full bg-black bg-opacity-[80%] border border-gray-500 gap-8">
-          <div className="absolute top-10 right-16 cursor-pointer z-[20]" onClick={handleCloseModal}>
+        <Modal open={true} className="overflow-scroll ">
+          <CardContent onClose={handleCloseModal}>
+            <div className="grid lg:grid-cols-2 rounded-[20px] min-h-[80vh] w-full bg-black bg-opacity-[80%] border border-gray-500 gap-8">
+              <div
+                className="absolute top-10 right-16 cursor-pointer z-[20]"
+                onClick={handleCloseModal}
+              >
                 <span className="text ">Close</span>
               </div>
-          <div className="h-full w-full">
-            {/* {apodData.length > 0 && (
+              <div className="h-full w-full">
+                {/* {apodData.length > 0 && (
               <ModalImage
                 small={selectedApod.url}
                 large={selectedApod.hdurl}
@@ -112,48 +120,50 @@ const APODImage = ({ apiKey, date, startDate, endDate, count, thumbs }) => {
                 className="rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-screen object-cover"
               />
             )} */}
-             {apodData.length > 0 &&
-              (apodData[0].media_type === "image" ? (
-                <ModalImage
-                  small={apodData[0].url}
-                  large={apodData[0].hdurl}
-                  alt={apodData[0].title}
-                  hideDownload={true}
-                  hideZoom={false}
-                  hideRotate={false}
-                  className="rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-full object-cover"
-                />
-              ) : (
-                <div className="rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-full flex items-center justify-center">
-                  <iframe
-                    src={apodData[0].url}
-                    title={apodData[0].title}
-                    className="w-full h-full"
-                    frameBorder="0"
-                    allow="autoplay; encrypted-media"
-                  ></iframe>
+                {apodData.length > 0 &&
+                  (apodData[0].media_type === "image" ? (
+                    <ModalImage
+                      small={apodData[0].url}
+                      large={apodData[0].hdurl}
+                      alt={apodData[0].title}
+                      hideDownload={true}
+                      hideZoom={false}
+                      hideRotate={false}
+                      className="rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-full object-cover"
+                    />
+                  ) : (
+                    <div className="rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-screen flex items-center justify-center">
+                      <iframe
+                        src={apodData[0].url}
+                        title={apodData[0].title}
+                        className="w-full h-full"
+                        frameBorder="0"
+                        allow="autoplay; encrypted-media"
+                        hideDownload={true}
+                        hideZoom={false}
+                        hideRotate={false}
+                      ></iframe>
+                    </div>
+                  ))}
+              </div>
+              <div className="h-full w-full flex flex-row items-center xl:pl-16 xl:pr-24 relative lg:py-8 p-2 py-4">
+                <div className="flex flex-col gap-5 justify-start items-start">
+                  <div className="text-white text-[40px] text-start">
+                    {selectedApod.title}
+                  </div>
+                  <div className="flex flex-row gap-3 items-center">
+                    <div className="text-[14px]">{selectedApod.date}</div>
+                    <div className="">
+                      <div className="w-[6px] h-[5px] bg-white rounded-full"></div>
+                    </div>
+                    <div className="text-[14px]">{selectedApod.copyright}</div>
+                  </div>
+                  <div className="text-start text-[16px]">
+                    {selectedApod.explanation}
+                  </div>
                 </div>
-              ))}
-          </div>
-          <div className="h-full w-full flex flex-row items-center xl:pl-16 xl:pr-24 relative lg:py-8 p-2 py-4">
-            <div className="flex flex-col gap-5 justify-start items-start">
-              <div className="text-white text-[40px] text-start">
-                {selectedApod.title}
               </div>
-              <div className="flex flex-row gap-3 items-center">
-                <div className="text-[14px]">{selectedApod.date}</div>
-                <div className="">
-                  <div className="w-[6px] h-[5px] bg-white rounded-full"></div>
-                </div>
-                <div className="text-[14px]">{selectedApod.copyright}</div>
-              </div>
-              <div className="text-start text-[16px]">
-                {selectedApod.explanation}
-              </div>
-              
             </div>
-          </div>
-        </div>
           </CardContent>
         </Modal>
       )}
