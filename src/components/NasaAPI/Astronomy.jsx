@@ -131,7 +131,6 @@ const APODImage = ({ apiKey, date, startDate, endDate, count, thumbs }) => {
                     className="w-full h-full"
                     frameBorder="0"
                     allow="autoplay; encrypted-media"
-                    allowFullScreen
                   ></iframe>
                 </div>
               ))}
