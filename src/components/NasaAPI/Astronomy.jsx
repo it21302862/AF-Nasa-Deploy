@@ -101,7 +101,7 @@ const APODImage = ({ apiKey, date, startDate, endDate, count, thumbs }) => {
                 <span className="text ">Close</span>
               </div>
           <div className="h-full w-full">
-            {apodData.length > 0 && (
+            {/* {apodData.length > 0 && (
               <ModalImage
                 small={selectedApod.url}
                 large={selectedApod.hdurl}
@@ -111,7 +111,30 @@ const APODImage = ({ apiKey, date, startDate, endDate, count, thumbs }) => {
                 hideRotate={true}
                 className="rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-screen object-cover"
               />
-            )}
+            )} */}
+             {apodData.length > 0 &&
+              (apodData[0].media_type === "image" ? (
+                <ModalImage
+                  small={apodData[0].url}
+                  large={apodData[0].hdurl}
+                  alt={apodData[0].title}
+                  hideDownload={true}
+                  hideZoom={false}
+                  hideRotate={false}
+                  className="rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-full object-cover"
+                />
+              ) : (
+                <div className="rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-full flex items-center justify-center">
+                  <iframe
+                    src={apodData[0].url}
+                    title={apodData[0].title}
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              ))}
           </div>
           <div className="h-full w-full flex flex-row items-center xl:pl-16 xl:pr-24 relative lg:py-8 p-2 py-4">
             <div className="flex flex-col gap-5 justify-start items-start">
