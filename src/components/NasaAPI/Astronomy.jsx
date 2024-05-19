@@ -122,26 +122,20 @@ const APODImage = ({ apiKey, date, startDate, endDate, count, thumbs }) => {
             )} */}
                 {apodData.length > 0 &&
                   (apodData[0].media_type === "image" ? (
-                    <ModalImage
-                      small={apodData[0].url}
-                      large={apodData[0].hdurl}
-                      alt={apodData[0].title}
-                      hideDownload={true}
-                      hideZoom={false}
-                      hideRotate={false}
-                      className="rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-full object-cover"
+                    <img
+                      src={apod.url}
+                      alt={apod.title}
+                      className="h-[200px] w-full object-cover rounded-t-[20px]"
                     />
                   ) : (
-                    <div className="rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-screen flex items-center justify-center">
+                    <div className="h-[200px] rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-full flex items-center justify-center">
                       <iframe
                         src={apodData[0].url}
                         title={apodData[0].title}
                         className="w-full h-full"
                         frameBorder="0"
                         allow="autoplay; encrypted-media"
-                        hideDownload={true}
-                        hideZoom={false}
-                        hideRotate={false}
+                        allowFullScreen
                       ></iframe>
                     </div>
                   ))}
