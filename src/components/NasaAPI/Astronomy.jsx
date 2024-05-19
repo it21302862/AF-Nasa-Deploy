@@ -122,10 +122,14 @@ const APODImage = ({ apiKey, date, startDate, endDate, count, thumbs }) => {
             )} */}
                 {apodData.length > 0 &&
                   (apodData[0].media_type === "image" ? (
-                    <img
-                      src={apod.url}
-                      alt={apod.title}
-                      className="h-[200px] w-full object-cover rounded-t-[20px]"
+                    <ModalImage
+                      small={selectedApod.url}
+                      large={selectedApod.hdurl}
+                      alt={selectedApod.title}
+                      hideDownload={true}
+                      hideZoom={true}
+                      hideRotate={true}
+                      className="rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-screen object-cover"
                     />
                   ) : (
                     <div className="h-[200px] rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-full flex items-center justify-center">
