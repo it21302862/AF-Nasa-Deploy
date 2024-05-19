@@ -85,8 +85,8 @@ const Home = () => {
                 className="rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-r-[0px] w-full h-full lg:h-full object-cover"
               />
             )} */}
-            {apodData.length > 0 && (
-              apodData[0].media_type === 'image' ? (
+            {apodData.length > 0 &&
+              (apodData[0].media_type === "image" ? (
                 <ModalImage
                   small={apodData[0].url}
                   large={apodData[0].hdurl}
@@ -107,8 +107,7 @@ const Home = () => {
                     allowFullScreen
                   ></iframe>
                 </div>
-              )
-            )}
+              ))}
           </div>
           <div className="h-full w-full flex flex-row items-center xl:pl-16 xl:pr-24 relative lg:py-8 p-2 py-4">
             <div
@@ -138,7 +137,7 @@ const Home = () => {
               </div>
               <div
                 className="xl:hidden cursor-pointer"
-                onClick={handleSeeMoreClick}
+                onClick={handleSeeMoreAdopClick}
               >
                 <span className="text">View Past Days</span>
               </div>
