@@ -25,6 +25,12 @@ const MARSImageWithContext = ({ apiKey, earthDate, sol, page, camera ,roverName 
           }
         } else if (earthDate) {
           apiUrl += `&earth_date=${earthDate}`;
+          if (camera) {
+            apiUrl += `&camera=${camera}`;
+          }
+          if (page) {
+            apiUrl += `&page=${page}`;
+          }
         }
 
         const response = await axios.get(apiUrl);
