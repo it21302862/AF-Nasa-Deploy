@@ -269,7 +269,7 @@ const APODImage = ({ apiKey, date, startDate, endDate, count, thumbs }) => {
         ))
       )}
       {selectedApod && (
-        <Modal open={true} onClose={handleCloseModal}>
+        <Modal open={true} onClose={handleCloseModal} className="overflow-scroll">
           <CardContent className="overflow-scroll">
             <div className="grid lg:grid-cols-2 rounded-[20px] min-h-[80vh] w-full bg-black bg-opacity-[80%] border border-gray-500 gap-8">
               <div
